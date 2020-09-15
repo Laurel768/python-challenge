@@ -4,17 +4,24 @@ import csv
 
 # Resources is in same folder as main.py, so we don't need to go anywhere to get it("..")
 # budget_data is our csvpath
-
+#csv_file = os.path.join("folder_name", "file.csv")
 csvpath = os.path.join("Resources", "budget_data.csv")
 
-# Open and read csv
-with open(csvpath, newline = "") as csvfile:
+total_months = 0
 
-# CSV reader speficies delimiter and variable that holds contents
+with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
 
-# Each row is read as a row
-    for row in csvreader:
-        print(row) 
+    csv_header = next(csvreader)
 
-        
+    for row in csvreader:
+        total_months += 1
+
+
+
+ 
+
+print("Total Months: " +str(total_months))
+
+
+
