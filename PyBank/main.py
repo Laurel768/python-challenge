@@ -34,10 +34,8 @@ with open(csvpath) as csvfile:
    
     # HOW DO I GET TOTAL_MONTHS TO BE ONE LESS?  86 - 1 = 85
         average_change = total_month_change / 85
-
-     
-
-
+        #average_change = total_months /(total_months - 1)
+       
         if month_change_profit_or_loss > greatest_increase:
             greatest_increase = month_change_profit_or_loss
             greatest_increase_month = row[0]
@@ -46,8 +44,8 @@ with open(csvpath) as csvfile:
             greatest_decrease = month_change_profit_or_loss
             greatest_decrease_month = row[0]
   
- 
- 
+    
+    
 print ("Financial Analysis")
 print ("----------------------------")
 print("Total Months: " +str(total_months))
