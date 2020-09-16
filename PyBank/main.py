@@ -45,12 +45,12 @@ with open(csvpath) as csvfile:
      
 
 
-        if pl_change > greatest_increase:
-            greatest_increase = pl_change
+        if month_change_profit_or_loss > greatest_increase:
+            greatest_increase = month_change_profit_or_loss
             greatest_increase_month = row[0]
 
-        if pl_change < greatest_decrease:
-            greatest_decrease = pl_change
+        if month_change_profit_or_loss < greatest_decrease:
+            greatest_decrease = month_change_profit_or_loss
             greatest_decrease_month = row[0]
   
  
