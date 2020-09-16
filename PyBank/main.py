@@ -43,8 +43,6 @@ with open(csvpath) as csvfile:
         if month_change_profit_or_loss < greatest_decrease:
             greatest_decrease = month_change_profit_or_loss
             greatest_decrease_month = row[0]
-  
-    
     
 print ("Financial Analysis")
 print ("----------------------------")
@@ -53,3 +51,13 @@ print("Total: $" + str(total_profit_or_loss))
 print("Average Change: $" + str(format(average_change, ".2f")))
 print("Greatest increase in profits: " + greatest_increase_month + " ($" + str(greatest_increase) +")")
 print("Greatest decrease in profits: " + (greatest_decrease_month) + " ($" + str(greatest_decrease) + ")")
+
+f = open("analysis.txt", "w")
+f.write("Financial Analysis\n")
+f.write("----------------------------\n")
+f.write("Total Months: " +str(total_months) + "\n")
+f.write("Total: $" + str(total_profit_or_loss ) + "\n")
+f.write("Average Change: $" + str(format(average_change, ".2f")) + "\n")
+f.write("Greatest increase in profits: " + greatest_increase_month + " ($" + str(greatest_increase) +") \n")
+f.write("Greatest decrease in profits: " + (greatest_decrease_month) + " ($" + str(greatest_decrease) + ") \n")
+f.close()
