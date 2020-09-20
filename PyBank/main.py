@@ -17,11 +17,13 @@ greatest_decrease = 0
 greatest_increase_month = ""
 greatest_decrease_month = ""
 
+# open csv file, separate data with commas
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
 
+#skip header row
     csv_header = next(csvreader)
-
+#calculate number of months, change in profit or loss
     for row in csvreader:
         total_months += 1
         total_profit_or_loss +=int(row[1])
@@ -43,7 +45,7 @@ with open(csvpath) as csvfile:
 # had to move this down to bottom, outside of "for" statement
 
 average_change = total_month_change /(total_months - 1)         
-    
+ # to print on screen   
 print ("Financial Analysis")
 print ("----------------------------")
 print("Total Months: " +str(total_months))
@@ -51,7 +53,7 @@ print("Total: $" + str(total_profit_or_loss))
 print("Average Change: $" + str(format(average_change, ".2f")))
 print("Greatest increase in profits: " + greatest_increase_month + " ($" + str(greatest_increase) +")")
 print("Greatest decrease in profits: " + (greatest_decrease_month) + " ($" + str(greatest_decrease) + ")")
-
+# to print to file
 f = open("analysis.txt", "w")
 f.write("Financial Analysis\n")
 f.write("----------------------------\n")

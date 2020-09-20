@@ -1,4 +1,4 @@
-
+# Importing the os and csv module to create file paths across operating systems
 import os
 import csv
 
